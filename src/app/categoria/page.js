@@ -18,7 +18,7 @@ export default function Categoria() {
             <input className="bg-indigo-100 p-2 focus:outline-none rounded" type="text" id="nome" required />
           </div>
           <div className="flex mt-5 justify-end">
-            <button className="px-5 py-2 bg-pink-500 text-white rounded">adicionar</button>
+            <button type="submit" className="px-5 py-2 bg-pink-500 text-white rounded">adicionar</button>
           </div>
         </div>
         <div className="flex flex-col mx-40 my-10 overflow-auto h-64 gap-3">

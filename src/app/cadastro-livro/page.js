@@ -36,8 +36,8 @@ export default function CadastroLivro() {
             </select>
           </div>
           <div className="flex flex-row mt-6 gap-8">
-            <button className="px-5 py-2 border border-2 border-indigo-200 rounded">cancelar</button>
-            <button className="px-5 py-2 bg-pink-500 text-white rounded">cadastrar</button>
+            <button type="reset" className="px-5 py-2 border border-2 border-indigo-200 rounded">cancelar</button>
+            <button type="submit" className="px-5 py-2 bg-pink-500 text-white rounded">cadastrar</button>
           </div>
         </div>
       </main>
