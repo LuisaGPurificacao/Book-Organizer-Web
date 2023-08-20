@@ -16,9 +16,10 @@ export default function BuscaLivros() {
           <h2 className="text-center font-bold">livros lidos</h2>
         </div>
         <div className="flex flex-col mx-40 my-10 gap-3">
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>50%</p>
-            <div className="bg-indigo-900 rounded-full w-1/2 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-1/2 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Clean Code</p>
@@ -27,9 +28,10 @@ export default function BuscaLivros() {
               <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can" />
             </div>
           </div>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>90%</p>
-            <div className="bg-indigo-900 rounded-full w-11/12 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-11/12 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Pequeno Príncipe</p>
@@ -38,9 +40,10 @@ export default function BuscaLivros() {
               <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can" />
             </div>
           </div>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>20%</p>
-            <div className="bg-indigo-900 rounded-full w-1/5 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-1/5 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Arquitetura limpa</p>
@@ -49,9 +52,10 @@ export default function BuscaLivros() {
               <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can" />
             </div>
           </div>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>60%</p>
-            <div className="bg-indigo-900 rounded-full w-3/5 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-3/5 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Java em 100 dias</p>
@@ -60,9 +64,10 @@ export default function BuscaLivros() {
               <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can" />
             </div>
           </div>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>50%</p>
-            <div className="bg-indigo-900 rounded-full w-1/2 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-1/2 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Vulgo Grace</p>
@@ -71,9 +76,10 @@ export default function BuscaLivros() {
               <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can" />
             </div>
           </div>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>50%</p>
-            <div className="bg-indigo-900 rounded-full w-1/2 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-1/2 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Python em 100 dias</p>
@@ -82,9 +88,10 @@ export default function BuscaLivros() {
               <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can" />
             </div>
           </div>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row items-center">
             <p>50%</p>
-            <div className="bg-indigo-900 rounded-full w-1/2 h-4"></div>
+            <div className="bg-indigo-900 rounded-l-lg w-1/2 h-4 ml-3"></div>
+            <div className="bg-indigo-200 rounded-r-lg h-4 grow"></div>
           </div>
           <div className="flex flex-row">
             <p className="bg-indigo-100 p-2 rounded-l-lg grow">Vermelho, Branco e Sangue Azul</p>
