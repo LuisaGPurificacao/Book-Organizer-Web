@@ -1,11 +1,18 @@
 import NavBar from "@/components/NavBar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import DataRow from "./DataRow";
+
+async function getCategorias(){
+  const url = "http://localhost:8080/book-organizer/categorias"
+  const response = await fetch(url,  { next: { revalidate: 0 } })
+  return response.json()
+}
 
 library.add(fas)
 
-export default function Categoria() {
+export default async function Categoria() {
+  const data = await getCategorias()
   return (
     <>
       <NavBar active={"categoria"} />
@@ -19,72 +26,12 @@ export default function Categoria() {
           </div>
           <div className="flex mt-5 justify-end">
             <button type="submit" className="px-5 py-2 bg-pink-500 text-white rounded">adicionar</button>
-          </div>
+          </div> 
         </div>
         <div className="flex flex-col mx-40 my-10 overflow-auto h-64 gap-3">
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Tecnologia</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Romance</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Terror</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Suspense</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Ação</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Educação Financeira</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Psicologia</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Biografia</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <p className="bg-indigo-100 p-2 rounded-l-lg grow">Comédia</p>
-            <div className="flex flex-row justify-evenly bg-indigo-100 p-2 rounded-r-lg w-24">
-              <FontAwesomeIcon className="w-6" icon="fa-solid fa-pencil"/>
-              <FontAwesomeIcon className="w-6 text-red-800" icon="fa-solid fa-trash-can"/>
-            </div>
-          </div>
+            {data.map(categoria => {
+              return <DataRow categoria={categoria} />
+            })}
         </div>
       </main>
     </>
