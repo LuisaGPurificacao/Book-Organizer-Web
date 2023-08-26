@@ -5,7 +5,7 @@ export default function NavBar({ active }) {
         <nav className="flex justify-between items-center bg-indigo-900 px-6 py-4">
             <ul className="flex gap-20 items-end">
                 <li>
-                    <Link href="/">
+                    <Link className={active == "busca-livro" && "text-slate-100"} href="/busca-livro">
                         <h1 className="text-2xl text-slate-100">
                             book organizer
                         </h1>
@@ -22,9 +22,9 @@ export default function NavBar({ active }) {
                     </Link>
                 </li>
                 <li>
-                    <Link className={active == "busca-livro" && "text-slate-100"} href="/busca-livro">
+                    {/* <Link className={active == "busca-livro" && "text-slate-100"} href="/busca-livro"> */}
                         buscar livros
-                    </Link>
+                    {/* </Link> */}
                 </li>
 
             </ul>
