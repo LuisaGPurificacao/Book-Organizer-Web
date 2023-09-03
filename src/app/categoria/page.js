@@ -1,11 +1,14 @@
 import NavBar from "@/components/NavBar";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import DataRow from "./DataRow";
+import Button from "@/components/Button";
+import TextInput from "@/components/TextInput";
 
-async function getCategorias(){
+async function getCategorias() {
   const url = "http://localhost:8080/book-organizer/categorias"
-  const response = await fetch(url,  { next: { revalidate: 0 } })
+  const response = await fetch(url, { next: { revalidate: 0 } })
   return response.json()
 }
 
@@ -20,18 +23,17 @@ export default async function Categoria() {
       <main className="text-black m-10 p-8">
         <h2 className="text-center text-4xl font-bold">Cadastrar categoria</h2>
         <div className="flex flex-col mx-40 my-10">
-          <div className="flex flex-col">
-            <label htmlFor="nome">Nome da categoria</label>
-            <input className="bg-indigo-100 p-2 focus:outline-none rounded" type="text" id="nome" required />
-          </div>
+          <TextInput name="nome" id="nome" label="Nome da categoria" />
           <div className="flex mt-5 justify-end">
-            <button type="submit" className="px-5 py-2 bg-pink-500 text-white rounded">adicionar</button>
-          </div> 
+            <Button icon={<FontAwesomeIcon className="w-4" icon="fa-solid fa-plus" />} href="/cadastro-livro">
+              adicionar
+            </Button>
+          </div>
         </div>
         <div className="flex flex-col mx-40 my-10 overflow-auto h-64 gap-3">
-            {data.map(categoria => {
-              return <DataRow categoria={categoria} />
-            })}
+          {data.map(categoria => {
+            return <DataRow categoria={categoria} />
+          })}
         </div>
       </main>
     </>
