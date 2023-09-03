@@ -5,14 +5,14 @@ export default function NavBar({ active }) {
         <nav className="flex justify-between items-center bg-indigo-900 px-6 py-4">
             <ul className="flex gap-20 items-end">
                 <li>
-                    <Link className={active == "busca-livro" && "text-slate-100"} href="/busca-livro">
+                    <Link className={active == "/livro" && "text-slate-100"} href="/livro">
                         <h1 className="text-2xl text-slate-100">
                             book organizer
                         </h1>
                     </Link>
                 </li>
                 <li>
-                    <Link className={active == "cadastro-livro" && "text-slate-100"} href="/cadastro-livro">
+                    <Link className={active == "/livro/new" && "text-slate-100"} href="/livro/new">
                         cadastrar livros
                     </Link>
                 </li>

@@ -6,7 +6,7 @@ import DataRow from "./DataRow";
 
 async function getLivros(){
   const url = "http://localhost:8080/book-organizer/livros"
-  const response = await fetch(url,  { next: { revalidate: 0 } })
+  const response = await fetch(url,  { next: { revalidate: 3600 } })
   return response.json()
 }
 
@@ -16,7 +16,7 @@ export default async function BuscaLivros() {
   const { entityModelList } = data._embedded;
   return (
     <>
-      <NavBar active={"busca-livro"} />
+      <NavBar active={"livro"} />
 
       <main className="text-black m-10 p-8">
         <div className="text-center bg-pink-500 text-white rounded mx-40 py-6">
