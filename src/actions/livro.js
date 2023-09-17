@@ -23,3 +23,20 @@ export async function create(formData){
     revalidatePath("/livro")
     return {ok: "Livro adicionado com sucesso"}
 }
+
+export async function destroy(id){
+    const deleteUrl = "http://localhost:8080/book-organizer/livros/" + id
+   
+    const options = {
+        method: "DELETE"
+    }
+
+    const response = await fetch(deleteUrl, options)
+
+    if (!response.ok){
+        const json = await response.json()
+        return {error: "falha ao apagar livro"}
+    }
+
+    revalidatePath("/livro")
+}
