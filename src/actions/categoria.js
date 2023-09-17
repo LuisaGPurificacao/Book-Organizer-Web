@@ -23,3 +23,20 @@ export async function create(formData){
     revalidatePath("/categoria")
     return {ok: "Categoria adicionada com sucesso"}
 }
+
+export async function destroy(id){
+    const deleteUrl = "http://localhost:8080/book-organizer/categorias/" + id
+   
+    const options = {
+        method: "DELETE"
+    }
+
+    const response = await fetch(deleteUrl, options)
+
+    if (!response.ok){
+        const json = await response.json()
+        return {error: "falha ao apagar categoria"}
+    }
+
+    revalidatePath("/categoria")
+}
