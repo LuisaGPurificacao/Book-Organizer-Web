@@ -40,3 +40,25 @@ export async function destroy(id){
 
     revalidatePath("/categoria")
 }
+
+export async function update(categoria){
+    const updateUrl = "http://localhost:8080/book-organizer/categorias/" + categoria.id
+    
+    const options = {
+        method: "PUT",
+        body: JSON.stringify(categoria) ,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    const response = await fetch(updateUrl, options)
+
+    if (!response.ok){
+        const json = await response.json()
+        return {error: "Erro ao atualizar " + json.message }
+    }
+
+    revalidatePath("/categoria")
+
+    return {ok: "Categoria alterada com sucesso"}
+}
