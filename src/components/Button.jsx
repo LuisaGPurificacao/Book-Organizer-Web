@@ -18,7 +18,7 @@ export default function Button({ children, icon, variant = "primary", element = 
                 :
                 <div className={variantClass} >
                     {icon}
-                    <input type="submit" value={children} />
+                    <input type="submit" value={children} {...props}/>
                 </div>
             }
         </>

@@ -3,11 +3,22 @@ import NavBar from "@/components/NavBar";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import DataRow from "./DataRow";
+import { cookies } from "next/headers"
+
+const url = process.env.NEXT_PUBLIC_BASE_URL + "/livros"
 
 async function getLivros(){
-  const url = "http://localhost:8080/book-organizer/livros"
-  const response = await fetch(url,  { next: { revalidate: 3600 } })
-  return response.json()
+  const token = cookies().get("bookorganizer_token")
+  const options = {
+      headers: {
+          "Authorization": `Bearer ${token.value}`
+      }
+  }
+  const response = await fetch(url, options)
+
+  if (response.status !== 200) throw new Error("Erro ao carregar os livros")
+
+  return await response.json()
 }
 
 library.add(fas)

@@ -4,11 +4,22 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import DataRow from "./DataRow";
 import Button from "@/components/Button";
+import { cookies } from "next/headers"
+
+const url = process.env.NEXT_PUBLIC_BASE_URL + "/categorias"
 
 async function getCategorias() {
-  const url = "http://localhost:8080/book-organizer/categorias"
-  const response = await fetch(url, { next: { revalidate: 0 } })
-  return response.json()
+  const token = cookies().get("bookorganizer_token")
+  const options = {
+      headers: {
+          "Authorization": `Bearer ${token.value}`
+      }
+  }
+  const response = await fetch(url)
+
+  if (response.status !== 200) throw new Error("Erro ao carregar as categorias")
+
+  return await response.json()
 }
 
 library.add(fas)
