@@ -19,18 +19,20 @@ export default function Login() {
 
     return (
         <div className='flex h-screen'>
-            <aside className='hidden lg:flex'>
+            <aside className='hidden lg:flex w-1/2'>
                 <Image
                     src={loginimage}
                     alt="imagem de livros empilhados"
                     className='h-full w-full object-cover' />
             </aside>
-            <main className='flex flex-col items-center justify-center h-screen w-full'>
-                <h1 className='text-5xl font-bold'>Meu Julius</h1>
+            <main className='text-black flex flex-col items-center justify-center h-screen w-full'>
+                <h1 className='text-5xl font-bold'>Book Organizer</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <TextInput register={register} name="email" label="e-mail" />
-                    <TextInput register={register} name="senha" label="senha" type="password" />
-                    <Button element="button">entrar</Button>
+                    <TextInput register={register} name="email" label="E-mail" />
+                    <TextInput register={register} name="senha" label="Senha" type="password" />
+                    <div className='mt-6'>
+                    <Button element="button">Entrar</Button>
+                    </div>
                 </form>
             </main>
         </div>
