@@ -15,7 +15,7 @@ async function getCategorias() {
           "Authorization": `Bearer ${token.value}`
       }
   }
-  const response = await fetch(url)
+  const response = await fetch(url, options)
 
   if (response.status !== 200) throw new Error("Erro ao carregar as categorias")
 
